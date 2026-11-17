@@ -25,19 +25,19 @@ daten |> group_by(maschine) |>
   summarise(n = sum(!is.na(masse_mm)))
 ```
 
-Vorhersage: ____________________
+Vorhersage:Jede Maschine hat ungefähr gleich vielegültige Messungen.
 
 **b)** Welche Maschine hat den größten Abstand zwischen Mittelwert und
 Sollmaß 10,00 mm? Um wie viele Hundertstel?
 
-Vorhersage: ____________________
+Vorhersage: Ich vermute, dass M3 den größten Abstand zum Sollmaß von 10,00 mm hat
 
 **c)** M1 und M2 unterscheiden sich um 0,024 mm im Mittelwert, die
 Streuungen sind 0,032 mm und 0,040 mm. M1 und M3 unterscheiden sich um
 0,062 mm bei 0,032 mm und 0,070 mm Streuung. **Welcher Vergleich fällt
 statistisch leichter durch — und warum?** (2 Sätze, ohne Formel)
 
-_________________________________________________
+Der Vergleich zwischen M1 und M3 fälltstärker auf, wei der Unterscheid zwischen den Mittelweeten größer ist.
 
 ---
 
@@ -46,8 +46,8 @@ _________________________________________________
 Vergleiche **M1 gegen M3** mit dem Welch-t-Test. Schreibe die beiden
 Hypothesen auf, die getestet werden:
 
-- H0: _________________________________________________
-- H1: _________________________________________________
+- H0: M1 und M3 haben denselben Mittelwert
+- H1: M1 und M3 haben unterschiedliche Mittelwerte
 
 ```r
 vergleich <- daten |> filter(maschine %in% c("M1", "M3"))
